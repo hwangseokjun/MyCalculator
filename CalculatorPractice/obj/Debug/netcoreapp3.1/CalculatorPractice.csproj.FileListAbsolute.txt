@@ -1,0 +1,16 @@
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.exe
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.deps.json
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.runtimeconfig.json
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.runtimeconfig.dev.json
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.dll
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\bin\Debug\netcoreapp3.1\CalculatorPractice.pdb
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.csproj.AssemblyReference.cache
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.Form1.resources
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.csproj.GenerateResource.cache
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.AssemblyInfoInputs.cache
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.AssemblyInfo.cs
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.csproj.CoreCompileInputs.cache
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.dll
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.pdb
+C:\Users\unbea\source\repos\CalculatorPractice\CalculatorPractice\obj\Debug\netcoreapp3.1\CalculatorPractice.genruntimeconfig.cache
