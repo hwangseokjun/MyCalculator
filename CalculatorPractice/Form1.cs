@@ -6,11 +6,20 @@ namespace CalculatorPractice
     delegate void Operator();
     public partial class Form1 : Form
     {
-        private decimal? numA;
-        private decimal? numB;
-        private Operator _operator;
-        private Button button;
+
+        // TODO: 계산 기록 로그 남기기 적용 필요
+
+        private decimal? numA = null;
+        private decimal? numB = null;
+        private decimal? result = null;
+        private Operator _operator = null;
+
+        private Button numBtn = null;
+        private Button oprtBtn = null;
+
         private bool isClickOperator = false;
+        private bool isClickEqual = false;
+        private bool isCalculated = false;
 
         public Form1()
         {
@@ -19,19 +28,19 @@ namespace CalculatorPractice
 
         private void NumClick(object sender, EventArgs e)
         {
-            this.button = (Button)sender;
+            this.numBtn = (Button)sender;
 
-            InitializeTextboxIfNeeded();
+            InitializeInputbox();
             WriteNumber();
         }
 
         private void OperatorClick(object sender, EventArgs e)
         {
-            this.button = (Button)sender;
+            this.oprtBtn = (Button)sender;
             this.isClickOperator = true;
 
-            AssignOperator(); // 오퍼레이터 할당
-            AssignNumbers(); // 숫자 할당
+            AssignOperator();
+            AssignNumbers();
         }
 
         private void EraseClick(object sender, EventArgs e) 
@@ -41,13 +50,20 @@ namespace CalculatorPractice
 
         private void DotClick(object sender, EventArgs e) 
         {
-            
+            InitializeInputbox();
+            WriteDot();
         }
 
         private void ClearClick(object sender, EventArgs e) 
         {
+            ClearAll();
+        }
+
+        private void ClearAll() 
+        {
             this.numA = null;
             this.numB = null;
+            this.result = null;
             this._operator = null;
             this.textBox1.Text = "0";
         }
@@ -57,10 +73,12 @@ namespace CalculatorPractice
             this.isClickOperator = true;
 
             AssignNumbers();
-            CalculateResultIfNeeded();
+            CalculateResult();
+            WriteResult();
+            Flush();
         }
 
-        private void InitializeTextboxIfNeeded()
+        private void InitializeInputbox()
         {
             if (isClickOperator)
             {
@@ -72,15 +90,21 @@ namespace CalculatorPractice
         private void WriteNumber()
         {
             if (this.textBox1.Text == "0")
-                this.textBox1.Text = this.button.Text;
+                this.textBox1.Text = this.numBtn.Text;
             else
-                this.textBox1.Text += this.button.Text;
+                this.textBox1.Text += this.numBtn.Text;
+        }
+
+        private void WriteDot() 
+        {
+            if (!this.textBox1.Text.Contains("."))
+                this.textBox1.Text += ".";
         }
 
 
         private void AssignOperator() 
         {
-            this._operator = this.button.Text switch
+            this._operator = this.oprtBtn.Text switch
             {
                 "/" => new Operator(Divide),
                 "*" => new Operator(Multiply),
@@ -98,37 +122,51 @@ namespace CalculatorPractice
                 this.numB = decimal.Parse(this.textBox1.Text);
         }
 
-        private void CalculateResultIfNeeded() 
+        private void CalculateResult() 
         {
             if (this._operator == null)
                 return;
             
-            if (this.numA != null && this.numB != null) 
+            if (
+                this.numA != null && 
+                this.numB != null &&
+                this._operator != null) 
             {
                 this._operator();
-                this.textBox1.Text = this.numA.ToString();
-                this.numA = null;
+                this.isCalculated = true;
             }
+        }
+
+        private void WriteResult() 
+        {
+            this.textBox1.Text = this.result.ToString();
+        }
+
+        private void Flush() 
+        {
+            this.result = null;
+            this.numA = null;
         }
 
         private void Add() 
         {
-            this.numA += this.numB;
+            this.result = this.numA + this.numB;
         }
 
         private void Substract() 
         {
-            this.numA -= this.numB;
+            this.result = this.numA - this.numB;
         }
 
         private void Multiply() 
         {
-            this.numA *= this.numB;
+            this.result = this.numA * this.numB;
         }
 
         private void Divide() 
         {
-            this.numA /= this.numB;
+            this.result = this.numA / this.numB;
         }
+
     }
 }
